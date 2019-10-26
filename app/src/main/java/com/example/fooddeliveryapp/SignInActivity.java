@@ -18,7 +18,7 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
 public class SignInActivity extends AppCompatActivity {
-    private static final String TAG = "AndroidClarified";
+    private static final String TAG = "SignInActivity";
     private GoogleSignInClient gsc;
     private SignInButton googleSignInButton;
 
@@ -73,9 +73,9 @@ public class SignInActivity extends AppCompatActivity {
     }
 
 
-    private void onLogin(GoogleSignInAccount googleSignInAccount) {
-        Intent intent = new Intent(this, MainActivity.class);
-        //intent.putExtra(MainActivity.GOOGLE_ACCOUNT, googleSignInAccount);
+    private void onLogin(GoogleSignInAccount gso) {
+        Intent intent = new Intent(this, SignUpActivity.class);
+        intent.putExtra("google_account", gso);
 
         startActivity(intent);
         finish();
